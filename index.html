@@ -234,16 +234,28 @@
         <td>To offer the optional one-time “Premium” upgrade through Google Play Billing. Payment is handled entirely by Google Play — the App never sees or stores your payment details.</td>
         <td><span class="pill no">No</span></td>
       </tr>
+      <tr>
+        <td><code>RECORD_AUDIO</code> (Microphone)</td>
+        <td>Used <strong>only</strong> while you switch on <em>Clap to flash</em> or <em>Music mode</em>. The App measures how loud the surrounding sound is, in memory, to detect a clap or a musical beat. Audio is <strong>never recorded, saved, or transmitted</strong>, and the microphone is released the moment the feature is switched off or the App leaves the screen.</td>
+        <td><span class="pill no">No</span></td>
+      </tr>
+      <tr>
+        <td>Notification access<br><code>BIND_NOTIFICATION_LISTENER_SERVICE</code></td>
+        <td>Used <strong>only</strong> if you switch on <em>Flash on calls &amp; messages</em>. Android tells the App that a notification has arrived so it can blink the torch. The App does <strong>not read, store, or transmit</strong> the contents, sender, or source app of any notification. You grant this separately in system settings and can revoke it at any time.</td>
+        <td><span class="pill no">No</span></td>
+      </tr>
     </tbody>
   </table>
   </div>
   <p class="muted">
-    The App does <strong>not</strong> request the Camera, Location, Microphone, Storage, Contacts,
-    or any other sensitive runtime permission.
+    The Microphone and Notification-access permissions above are <strong>optional</strong>: they stay
+    switched off until you turn on the feature that needs them, and you can revoke them at any time.
+    The App does <strong>not</strong> request Camera, Location, Storage, Contacts, or any other
+    sensitive runtime permission.
   </p>
 
   <h2 id="sensors"><span class="num">4.</span>Device sensors we use</h2>
-  <p>The App reads two motion/position sensors purely on-device, in real time. Their readings are used only to trigger an action and are <strong>never recorded, stored, or transmitted</strong>:</p>
+  <p>The App reads a few motion and position sensors purely on-device, in real time (the magnetometer/rotation sensor is used only by the optional Compass tool). Their readings are used only to trigger an action and are <strong>never recorded, stored, or transmitted</strong>:</p>
   <ul>
     <li><strong>Accelerometer</strong> — to detect a deliberate shake so the flashlight can toggle.</li>
     <li><strong>Proximity sensor</strong> — for “Pocket Protection”, to ignore shakes while the phone is covered or in a pocket.</li>
